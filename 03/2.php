@@ -15,7 +15,7 @@ foreach ($rows as $rowNumber => $items) {
             $numberPositions[] = $itemPosition;
 
             if (false === is_int($items[$itemPosition+1] ?? null)) {
-                $symbolCoordinates = arePositionsAdjacentToSymbol($rows, $itemsCountInRow, $rowNumber, $numberPositions);
+                $symbolCoordinates = getCoordinatesOfSymbolNearNumber($rows, $itemsCountInRow, $rowNumber, $numberPositions);
                 if (null !== $symbolCoordinates) {
                     $pairs[$symbolCoordinates][] =  (int) $currentNumber;
                 }
@@ -43,7 +43,7 @@ function getAsArray(): array {
     } , $input);
 }
 
-function arePositionsAdjacentToSymbol(array $rows, int $itemsCountInRow,  int $rowNumber, array $positions) {
+function getCoordinatesOfSymbolNearNumber(array $rows, int $itemsCountInRow,  int $rowNumber, array $positions) {
     $rowsToCheck = [
         $rowNumber-1 => $rowNumber > 0 ? $rows[$rowNumber-1] : null,
         $rowNumber => $rows[$rowNumber],
