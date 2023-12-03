@@ -17,4 +17,4 @@ $numbers = array_map(function (string $string): int {
 
 }, $strings);
 
-echo array_sum($numbers);
+echo array_sum($numbers).PHP_EOL;

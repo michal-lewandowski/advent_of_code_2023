@@ -1,1 +1,3 @@
-# advent_of_code_2023
+# Advent of code 2023. Solutions in PHP 
+
+They may be ugly, but at least they work :D 
