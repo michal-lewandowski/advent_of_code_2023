@@ -19,7 +19,6 @@ foreach ($gamesInput as $game) {
         }
     }
     $games[$gameNum][] = $picks;
-
 }
 
 $sum = 0;
