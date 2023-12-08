@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-const DIGITS_NAME = ['one' => 'on1ne', 'two' => 'tw2wo', 'three' => 'thre3hree', 'four' => 'fou4our', 'five' => 'fi5ive', 'six' => 'si6ix', 'seven' => 'seve7even', 'eight' => 'eigh8ight', 'nine' => 'nin9ine'];
-$strings = file('test.txt');
-
+const DIGITS_NAME = ['one' => 'o1e', 'two' => 't2o', 'three' => 't3e', 'four' => 'f4r', 'five' => 'f5e', 'six' => 's6x', 'seven' => 's7n', 'eight' => 'e8t', 'nine' => 'n9e'];
 
 $numbers = array_map(function (string $string): int {
     foreach (DIGITS_NAME as $key => $value) {
@@ -15,6 +13,6 @@ $numbers = array_map(function (string $string): int {
 
     return $result;
 
-}, $strings);
+}, file('test.txt'));
 
 echo array_sum($numbers).PHP_EOL;

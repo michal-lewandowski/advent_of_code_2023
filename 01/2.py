@@ -1,12 +1,10 @@
 import re
 
-DIGITS_REPLACEMTNS = {'one': 'on1ne','one': 'on1ne', 'two': 'tw2wo', 'three' : 'thre3hree', 'four' : 'fou4our', 'five' : 'fi5ive', 'six' : 'si6ix', 'seven' : 'seve7even', 'eight' : 'eigh8ight', 'nine' : 'nin9ine'
+DIGITS_REPLACEMTNS = {'one': 'o1e','one': 'o1e', 'two': 't2o', 'three' : 't3e', 'four' : 'f4r', 'five' : 'f5e', 'six' : 's6x', 'seven' : 's7n', 'eight' : 'e8t', 'nine' : 'n9e'
 }
 
-rows = open("test.txt", "r+").read().splitlines()
-
 sum = 0
-for row in rows:
+for row in open("test.txt", "r+").read().splitlines():
     for numberName in DIGITS_REPLACEMTNS:
         row = row.replace(numberName, DIGITS_REPLACEMTNS[numberName])
     number = re.sub('[^0-9]', '', row)
